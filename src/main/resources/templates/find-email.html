@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/account.css">
+</head>
+<body>
+    <div id="root">
+        <header id="header">
+            <div class="header-top">
+                <div class="logo activate">
+                    <a href="/">SCS</a>
+                </div>
+                <nav>
+                    <ul>
+                        <!-- 로그인하지 않은 경우 -->
+                        <li th:if="!${member}"><a href="/login">Login</a></li>
+                        <li th:if="!${member}"><a href="/signup">Signup</a></li>
+
+                        <!-- 로그인한 경우 -->
+                        <li th:if="${member}"><a href="/logout">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-bottom">    
+                <div id="app-title-box">
+                    <h1>Simple</h1>
+                    <h1>Community</h1>
+                    <h1>Service</h1>
+                    <p>made of Spring Boot</p>
+                </div>                
+            </div>
+        </header>
+
+        <main>
+            <div id="account-box">
+                <h1>Find Email</h1>
+
+                <form>
+                <div class="input-box">
+                    <input id="name" type="text" required>
+                    <label>Name</label>
+                </div>
+            </form>
+
+                <div class="btns">
+                    <button id="find-email-btn">Find Email</button>
+                </div>
+
+                <ul>
+                    <li><a href="/find-password">비밀번호찾기</a></li>
+                    <li><a href="/login">로그인</a></li>
+                    <li><a href="/signup">회원가입</a></li>
+                </ul>
+            </div>
+        </main>
+
+        <footer></footer>
+    </div>
+    <script src="/js/api.js"></script>
+    <script src="/js/find-email.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  background-color: #190033;
+}
+
+/* header design */
+header {
+  width: 100%;
+  background-color: #190033;
+  padding: 0 8%;
+  position: relative;
+}
+
+header .header-top {
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo a {
+  flex: 1;
+  font-size: 50px;
+  color: #fff;
+  text-decoration: none;
+}
+
+header .header-bottom {
+  height: 0;
+  transition: all 0.3s;
+}
+
+header:hover .header-bottom {
+  /* height: 50vh; */
+  display: none;
+}
+
+header:hover .header-bottom #app-title-box {
+  display: block;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul li {
+  list-style: none;
+  margin: 10px 30px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  font-size: 30px;
+}
+
+header nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  transition: width 0.3s;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+header .header-bottom #app-title-box {
+  display: none;
+}
+
+header .header-bottom.activate h1,
+header .header-bottom.activate p {
+  color: #fff;
+  transition: all 0.3s;
+}
+
+header #app-title-box {
+  color: #fff;
+  position: absolute;
+  bottom: 8%;
+}
+
+header #app-title-box h1 {
+  font-size: 90px;
+  line-height: 90px;
+  margin-left: -10px;
+}
+
+header #app-title-box p {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+/* main design */
+main {
+  background-color: #fff;
+  margin: 0 20px;
+  padding: 30px;
+  min-height: 800px;
+  border-radius: 5px;
+}
+
+/* footer design */
+footer {
+  width: 100%;
+  height: 20vh;
+  background-color: #190033;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+footer p {
+  color: #fff;
+}
+
+/* form design */
+form .input-box {
+  margin: 20px 0;
+  position: relative;
+}
+
+form .input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+form .input-box input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #000;
+  background: none;
+  outline: none;
+}
+
+form .input-box input:focus ~ label,
+form .input-box input:valid ~ label {
+  top: -5px;
+}
+
+form .input-box h3 {
+  color: #adadad;
+}
+
+form textarea {
+  width: 100%;
+  height: 500px;
+  font-size: 18px;
+  line-height: 25px;
+  padding: 10px;
+}
+
+/* button design */
+.btns a {
+  margin-right: 20px;
+  padding: 10px 15px;
+  border: 3px solid #190033;
+  border-radius: 5px;
+  background: #190033;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btns a:hover {
+  background: #fff;
+  color: #190033;
+}

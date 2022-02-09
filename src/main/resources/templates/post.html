@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/post.css">
+</head>
+<body>
+    <div id="root">
+        <header id="header">
+            <div class="header-top">
+                <div class="logo activate">
+                    <a href="/">SCS</a>
+                </div>
+                <nav>
+                    <ul>
+                        <!-- 로그인하지 않은 경우 -->
+                        <li th:if="!${member}"><a href="/login">Login</a></li>
+                        <li th:if="!${member}"><a href="/signup">Signup</a></li>
+
+                        <!-- 로그인한 경우 -->
+                        <li th:if="${member}"><a href="/logout">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-bottom">    
+                <div id="app-title-box">
+                    <h1>Simple</h1>
+                    <h1>Community</h1>
+                    <h1>Service</h1>
+                    <p>made of Spring Boot</p>
+                </div>                
+            </div>
+        </header>
+
+        <main>
+            <div class="post-header">
+                <div>
+                    <h1 th:text="${post.title}"></h1>
+                    <ul class="post-info">
+                        <li th:text="${post.author}"></li>
+                        <li th:text="${post.modifiedAt}"></li>
+                        <li>추천 <span th:text="${post.recommends}"></span></li>
+                        <li>댓글 5</li>
+                    </ul>
+                </div>
+                
+                <ul class="btns">
+                    <li><a th:href="@{/posts/{id}/update(id=${post.id})}">수정</a></li>
+                    <li><a id="delete-btn" href="#">삭제</a></li>
+                </ul>
+            </div>
+            <div class="post-main">
+                <div class="content">
+                    <p th:text="${post.content}"></p>
+                </div>
+                <div class="btns">
+                    <a th:if="!${isRecommended}" href="#" onclick="recommend()">추천</a>
+                    <a th:if="${isRecommended}" href="#" onclick="recommendCancel()">취소</a>
+                    <span th:text="${post.recommends}"></span>
+                </div>
+            </div>
+            <div class="post-footer">
+
+                <h4>Comment</h4>
+                    <div class="cmts">
+
+                        <div class="cmt">
+                            <div class="cmt-author">jinsu</div>
+                            <div class="cmt-content">
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos accusantium a veritatis.
+                                </p>
+                            </div>
+                            <div class="cmt-info">
+                                <span class="createdAt">2022-01-29 3 15:54</span>
+                                <a href="#" class="cmt-delete">X</a>
+                            </div>
+                        </div>
+
+                        <div class="cmt">
+                            <div class="cmt-author">jinsu</div>
+                            <div class="cmt-content">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempore numquam consequuntur non unde expedita voluptatem ullam voluptates odio praesentium iure ipsam alias et iusto quos, nam earum ipsa velit maxime provident quod officia libero. Nihil, aspernatur molestiae consectetur sunt iusto tempora consequuntur id voluptates doloribus dolorum quia, dignissimos qui!
+                                </p>
+                            </div>
+                            <div class="cmt-info">
+                                <span class="createdAt">2022-01-29 3 15:54</span>
+                                <a href="#" class="cmt-delete">X</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+            </div>
+        </main>
+
+        <footer></footer>
+    </div>
+
+    <script  th:inline="javascript">
+	    /*<![CDATA[*/
+	    const id = [[${post.id}]];
+	    /*]]>*/
+    </script>
+    <script src="/js/api.js"></script>
+    <script src="/js/post.js"></script>
+</body>
+</html>

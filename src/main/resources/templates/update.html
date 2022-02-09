@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/post.css">
+</head>
+<body>
+    <div id="root">
+        <header id="header">
+            <div class="header-top">
+                <div class="logo activate">
+                    <a href="/">SCS</a>
+                </div>
+                <nav>
+                    <ul>
+                        <!-- 로그인하지 않은 경우 -->
+                        <li th:if="!${member}"><a href="/login">Login</a></li>
+                        <li th:if="!${member}"><a href="/signup">Signup</a></li>
+
+                        <!-- 로그인한 경우 -->
+                        <li th:if="${member}"><a href="/logout">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-bottom">
+                <div id="app-title-box">
+                    <h1>Simple</h1>
+                    <h1>Community</h1>
+                    <h1>Service</h1>
+                    <p>made of Spring Boot</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="post-header">
+                <div>
+                    <h1>게시글 수정</h1>
+                </div>
+                
+                <ul class="btns">
+                    <li><a id="update-btn" href="#">수정</a></li>
+                    <li><a th:href="@{/posts/{id}(id=${post.id})}">취소</a></li>
+                </ul>
+            </div>
+
+            <div class="post-main">
+                <form>
+                    <div class="input-box">
+                        <input th:value="${post.title}" id="title" type="text" required>
+                        <label for="">제목</label>
+                    </div>
+
+                    <div class="input-box">
+                        <h3>내용</h3>
+                        <textarea th:value="${post.content}" name="" id="content" cols="30" rows="10"></textarea>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer></footer>
+    </div>
+
+    <script th:inline="javascript">
+	    /*<![CDATA[*/
+	    const id = [[${post.id}]];
+	    /*]]>*/
+    </script>
+    <script src="/js/api.js"></script>
+    <script th:src="@{/js/update.js}"></script>
+</body>
+</html>

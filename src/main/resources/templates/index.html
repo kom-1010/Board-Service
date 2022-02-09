@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div id="root">
+        <header id="header">
+            <div class="header-top">
+                <div class="logo activate">
+                    <a href="/">SCS</a>
+                </div>
+                <nav>
+                    <ul>
+                        <!-- 로그인하지 않은 경우 -->
+                        <li th:if="!${member}"><a href="/login">Login</a></li>
+                        <li th:if="!${member}"><a href="/signup">Signup</a></li>
+
+                        <!-- 로그인한 경우 -->
+                         <li th:if="${member}"><a href="/logout">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-bottom">
+                <div id="app-title-box">
+                    <h1>Simple</h1>
+                    <h1>Community</h1>
+                    <h1>Service</h1>
+                    <p>made of Spring Boot</p>
+                </div>
+            </div>
+        </header>
+
+        <main id="list">
+            <div class="main-header">
+                <h2>게시판</h2>
+                <div class="btns">
+                    <a href="/create" th:if="${member}">글쓰기</a>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th class="th-no">번호</th>
+                        <th class="th-title">제목</th>
+                        <th class="th-author">작성자</th>
+                        <th class="th-recommends">추천</th>
+                        <th class="th-createdAt">작성시간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="post : ${posts}">
+                        <td th:text="${post.id}"></td>
+                        <td class="td-title"><a th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.title}"></a></td>
+                        <td th:text="${post.author}"></td>
+                        <td th:text="${post.recommends}"></td>
+                        <td th:text="${post.createdAt}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <ul>
+                    <li><a href="#" class="prev"><</a></li>
+                    <li class="page-number"><a href="#">1</a></li>
+                    <li class="page-number"><a href="#">2</a></li>
+                    <li class="page-number"><a href="#">3</a></li>
+                    <li class="page-number"><a href="#">4</a></li>
+                    <li class="page-number"><a href="#">5</a></li>
+                    <li><a href="#" class="next">></a></li>
+                </ul>
+            </div>
+
+            <div class="search-box">
+                <div class="dropdown">
+                    <div class="default-option">제목</div>
+                    <div class="dropdown-list">
+                        <ul>
+                            <li class="dropdown-keyword">제목</li>
+                            <li class="dropdown-keyword">작성자</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="search">
+                    <input type="text" class="search-input" placeholder="Search for ...">
+                </div>
+
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </main>
+
+        <footer>
+        </footer>
+    </div>
+
+    <script src="/js/index.js"></script>
+</body>
+</html>

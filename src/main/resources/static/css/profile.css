@@ -1,0 +1,66 @@
+main {
+  display: flex;
+}
+
+.content-box {
+  padding-left: 100px;
+  width: 700px;
+}
+
+.content-box h1 {
+  margin-bottom: 50px;
+}
+
+.content-box .profile-info {
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px 30px;
+  margin-bottom: 50px;
+}
+
+.content-box .profile-info span {
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+/* profile menu bar design */
+.menu-box {
+  padding-right: 80px;
+  border-right: 1px solid #000;
+}
+
+.menu-box ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.menu-box ul li {
+  margin-bottom: 30px;
+}
+
+.menu-box ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.menu-box ul li a.activate,
+.menu-box ul li a:hover {
+  background-color: #190033;
+  color: #fff;
+}
+
+/* profile form design */
+.content-box .input-box {
+  width: 600px;
+  margin-bottom: 30px;
+}
+
+.content-box .btns {
+  margin-top: 80px;
+}

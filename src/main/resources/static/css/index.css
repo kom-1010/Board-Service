@@ -1,0 +1,163 @@
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* table design */
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  width: 100%;
+  min-width: 400px;
+}
+
+table th.th-no {
+  width: 5%;
+}
+table th.th-title {
+  width: 70%;
+}
+table th.th-author {
+  width: 10%;
+}
+table th.th-createdAt {
+  width: 15%;
+}
+
+table thead tr {
+  background-color: #190033;
+  color: #fff;
+  text-align: left;
+  font-weight: 400;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+table tbody tr td.td-title {
+  text-align: left;
+  padding-left: 30px;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid #190033;
+}
+
+table tbody tr a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* pagination design */
+.pagination ul {
+  display: flex;
+  position: relative;
+  background: #fff;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination ul li {
+  width: 50px;
+  height: 50px;
+  list-style: none;
+  line-height: 50px;
+  margin: 0 5px;
+  text-align: center;
+}
+
+.pagination ul li a {
+  display: block;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.pagination ul li.active a,
+.pagination ul li:hover a {
+  background: #000;
+  color: #fff;
+}
+
+/* search bar design */
+.search-box {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 150px;
+  width: 800px;
+  height: 50px;
+  padding: 10px;
+  border: 2px solid #190033;
+  border-radius: 30px;
+}
+
+.search-box .dropdown {
+  position: relative;
+  width: 150px;
+  padding-left: 5px;
+  border-right: 2px solid #190033;
+  cursor: pointer;
+}
+
+.search-box .dropdown .default-option {
+  padding: 0 30px;
+  font-size: 20px;
+}
+
+.search-box .dropdown .dropdown-list ul {
+  list-style: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 140px;
+  border: 2px solid #190033;
+  border-radius: 5px;
+  font-size: 20px;
+  display: none;
+}
+
+.search-box .dropdown .dropdown-list.active ul {
+  display: block;
+}
+
+.search-box .dropdown .dropdown-list ul li {
+  padding: 10px 30px;
+}
+
+.search-box .search {
+  margin: 0 10px;
+  width: 600px;
+  height: 100%;
+}
+
+.search-box .search-input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+.search-box .search-input:focus {
+  outline: none;
+}
+
+.search-box .search-btn {
+  background-color: #fff;
+  width: 50px;
+  height: 100%;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+}

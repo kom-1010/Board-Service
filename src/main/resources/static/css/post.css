@@ -1,0 +1,105 @@
+.post-header {
+  border-bottom: 1px solid #adadad;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-header .post-info {
+  display: flex;
+  list-style: none;
+}
+
+.post-header .post-info li {
+  border-right: 1px solid #adadad;
+  padding: 0 10px;
+  color: #adadad;
+}
+
+.post-header .post-info li:first-child {
+  padding-left: 0;
+}
+
+.post-header .post-info li:last-child {
+  border-right: none;
+}
+
+.post-header .btns {
+  display: flex;
+  list-style: none;
+}
+
+.post-header .btns li {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.post-main {
+  padding: 20px 0;
+  border-bottom: 1px solid #adadad;
+}
+
+.post-main .content {
+  min-height: 200px;
+  font-size: 18px;
+  line-height: 36px;
+  margin-bottom: 200px;
+}
+
+.post-main .btns {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.post-main .btns span {
+  font-size: 25px;
+}
+
+.post-footer {
+  padding: 20px 0;
+}
+
+.post-footer .cmts .cmt {
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid #adadad;
+}
+
+.post-footer .cmts .cmt:last-child {
+  border-bottom: 1px solid #adadad;
+}
+
+.post-footer .cmts .cmt .cmt-author {
+  width: 130px;
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.post-footer .cmts .cmt .cmt-content {
+  width: 1000px;
+}
+
+.post-footer .cmts .cmt .cmt-content p {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.post-footer .cmts .cmt .cmt-info {
+  margin-left: auto;
+}
+
+.post-footer .cmts .cmt .cmt-info span {
+  font-size: 16px;
+}
+
+.post-footer .cmts .cmt .cmt-info a {
+  padding: 3px;
+  margin-left: 10px;
+  text-decoration: none;
+  border: 1px solid #190033;
+  border-radius: 5px;
+  background: #190033;
+  color: #fff;
+  font-size: 12px;
+}

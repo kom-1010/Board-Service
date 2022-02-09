@@ -1,0 +1,73 @@
+main {
+  height: 100vh;
+  position: relative;
+}
+
+#account-box {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  padding: 20px 0;
+}
+
+#account-box h1 {
+  text-align: center;
+  font-size: 50px;
+  padding: 0 0 20px 0;
+}
+
+#account-box .text-box,
+#account-box form {
+  padding: 0 40px;
+}
+
+#account-box .text-box span {
+  font-size: 25px;
+}
+
+.btns {
+  text-align: center;
+}
+
+.btns button {
+  width: 300px;
+  height: 50px;
+  background: #190033;
+  border: 2px solid #190033;
+  border-radius: 30px;
+  color: #fff;
+  margin: 20px 0;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.btns button:hover {
+  background: #fff;
+  color: #190033;
+}
+
+#account-box ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+#account-box ul li {
+  margin-right: 10px;
+}
+
+#account-box ul li:last-child {
+  margin-right: 0;
+}
+
+#account-box ul li a {
+  color: #adadad;
+  text-decoration: none;
+}
+
+#account-box ul li a:hover {
+  text-decoration: underline;
+}
